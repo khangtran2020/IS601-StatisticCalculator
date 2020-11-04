@@ -13,4 +13,4 @@ Basic Calculations:
 - [ ] Square Root
 
 Statistic Calculations:
-- [ ] Median
+- [ ] [Median](/Documents/median.md)
