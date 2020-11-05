@@ -5,14 +5,15 @@ from Calculator.Addition import addition
 
 def median_data(data):
     try:
-        data.sort()
+        copy = [data[i] for i in range(len(data))]
+        copy.sort()
         if len(data) % 2 == 0:
-            median1 = data[int(len(data) // 2)]
-            median2 = data[int(subtraction((data // 2), 1))]
-            median_result = division(addition(median1, median2), 2, 9)
+            left = copy[int(len(copy) // 2)]
+            right = copy[int(subtraction((copy // 2), 1))]
+            median = division(addition(left, right), 2, 9)
         else:
-            median_result = data[int(division(len(data), 2), 9)]
-        return median_result
+            median = copy[int(division(len(copy), 2), 9)]
+        return median
     except ZeroDivisionError:
         print("Error: Can't Divide by 0")
     except ValueError:
