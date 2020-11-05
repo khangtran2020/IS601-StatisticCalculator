@@ -5,13 +5,14 @@ This is the repository for IS601 Team Project 2 - Stats Calculator Group
 ## 2. Task
 
 Basic Calculations:
-- [ ] Addition
-- [ ] Subtraction
-- [ ] Multiplication
-- [ ] Division
-- [ ] Square
-- [ ] Square Root
+- [x] Addition
+- [x] Subtraction
+- [x] Multiplication
+- [x] Division
+- [x] Square
+- [x] Square Root
 
 Statistic Calculations:
-- [ ] [Median](/Documents/median.md)
-- [x] [Mean](/Documents/mean.md)
+- [x] [Median](./Documents/median.md)
+- [x] [Mean](./Documents/mean.md)
+- [x] [Mode](./Documents/mode.md)
