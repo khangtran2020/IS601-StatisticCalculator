@@ -4,6 +4,7 @@ from Calculator.Multiplication import multiplication
 from Calculator.Division import division
 from Calculator.Squaring import squaring
 from Calculator.SquareRoot import squareRoot
+from Calculator.GetLength import getLength
 
 
 
@@ -25,14 +26,17 @@ class Calculator:
     def multiply(self, a,b):
         self.result = multiplication(a,b)
         return self.result
-    def divide(self, a, b):
-        self.result = division(a,b)
+    def divide(self, a, b, length):
+        self.result = division(a,b, length)
         return self.result
 
     def square(self, a):
         self.result = squaring(a)
         return self.result
 
-    def sqrt(self, a):
-        self.result = squareRoot(a)
+    def sqrt(self, a, length):
+        self.result = squareRoot(a, length)
         return self.result
+
+    def length(self, a):
+        return getLength(a)

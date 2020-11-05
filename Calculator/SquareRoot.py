@@ -1,2 +1,2 @@
-def squareRoot(a):
-    return round(float(a)**0.5,9)
+def squareRoot(a, length):
+    return round(float(a)**0.5,length)
