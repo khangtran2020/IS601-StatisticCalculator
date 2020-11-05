@@ -14,3 +14,4 @@ Basic Calculations:
 
 Statistic Calculations:
 - [ ] [Median](/Documents/median.md)
+- [x] [Mean](/Documents/mean.md)
