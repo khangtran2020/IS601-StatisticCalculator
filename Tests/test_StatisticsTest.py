@@ -43,6 +43,9 @@ class MyTestCase(unittest.TestCase):
         for i in range(len(z_test)):
             self.assertEqual(z_test[i], round(z_result[i],6))
 
+    def test_checkType(self):
+        self.assertEqual(self.statistics.check(self.test_data), type(self.test_data))
+
 
 
 if __name__ == '__main__':
