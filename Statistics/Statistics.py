@@ -4,6 +4,7 @@ from Statistics.Mode import mode_data
 from Statistics.Variance import variance_data
 from Statistics.StandardDeviation import standarddeviation_data
 from Statistics.Zscore import z_score_transformation
+from Statistics.AdditionalModules import checkType, randomNumber
 
 class Statistics:
     result = 0
@@ -35,3 +36,11 @@ class Statistics:
     def z_score(self, data):
         self.data = z_score_transformation(data)
         return self.data
+
+    def check(self, a):
+        self.result = checkType(a)
+        return self.result
+
+    def rand(self, a):
+        self.result = randomNumber(a)
+        return self.result

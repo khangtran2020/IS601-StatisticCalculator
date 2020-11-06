@@ -21,3 +21,7 @@ This is the repository for IS601 Team Project 2 - Stats Calculator Group
 - [x] [Variance](./Documents/variance.md)
 - [x] [Standard Deviation](./Documents/std.md)
 - [x] [Z Score](./Documents/z_score.md)
+
+#### Additional Modules
+- [x] Check Type of an instance
+- [x] Generate a random integer in a range.
