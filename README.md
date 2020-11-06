@@ -16,3 +16,4 @@ Statistic Calculations:
 - [x] [Median](./Documents/median.md)
 - [x] [Mean](./Documents/mean.md)
 - [x] [Mode](./Documents/mode.md)
+- [x] [Variance](./Documents/variance.md)
