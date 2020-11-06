@@ -3,6 +3,7 @@ from Statistics.Median import median_data
 from Statistics.Mode import mode_data
 from Statistics.Variance import variance_data
 from Statistics.StandardDeviation import standarddeviation_data
+from Statistics.Zscore import z_score_transformation
 
 class Statistics:
     result = 0
@@ -30,3 +31,7 @@ class Statistics:
     def std(self, data):
         self.result = standarddeviation_data(data)
         return self.result
+
+    def z_score(self, data):
+        self.data = z_score_transformation(data)
+        return self.data
