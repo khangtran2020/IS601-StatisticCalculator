@@ -20,3 +20,4 @@ This is the repository for IS601 Team Project 2 - Stats Calculator Group
 - [x] [Mode](./Documents/mode.md)
 - [x] [Variance](./Documents/variance.md)
 - [x] [Standard Deviation](./Documents/std.md)
+- [x] [Z Score](./Documents/z_score.md)
