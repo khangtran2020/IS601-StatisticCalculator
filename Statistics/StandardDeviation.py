@@ -3,4 +3,4 @@ from Calculator.SquareRoot import squareRoot
 
 def standarddeviation_data(data):
     var = variance_data(data)
-    return squareRoot(var)
+    return squareRoot(var,9)
