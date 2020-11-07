@@ -46,6 +46,33 @@ class MyTestCase(unittest.TestCase):
     def test_checkType(self):
         self.assertEqual(self.statistics.check(self.test_data), type(self.test_data))
 
+    def test_randomeseed(self):
+        self.assertEqual(self.statistics.randseed(self.test_data))
+
+    def test_randlist(self):
+        self.assertEqual(self.statistics.randlist(self.test_data))
+
+    def test_randchoose(self):
+        self.assertEqual((self.statistics.randomchoose()))
+
+    def test_randnlist(self):
+        self.assertEqual(self.statistics.randnlist(self.test_data))
+
+    def test_randnsample(self):
+        self.assertEqual(self.statistics.randnsample(self.test_data))
+
+    def test_randinterval(self):
+        self.assertEqual(self.statistics.randinterval(self.test_data))
+
+    def test_moe(self):
+        self.assertEqual(self.statistics.marginerror(self.test_data))
+
+    def test_cochran(self):
+        self.assertEqual(self.statistics.randcochran(self.test_data))
+
+    def test_samplesze(self):
+        self.assertEqual(self.statistics.samplesze(self.test_data))
+
 
 
 if __name__ == '__main__':
