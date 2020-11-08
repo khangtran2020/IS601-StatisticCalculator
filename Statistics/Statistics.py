@@ -12,7 +12,7 @@ from Statistics.randn import randn
 from Statistics.randomsample import randsample
 from Statistics.randinterval import mean_confidence_interval
 from Statistics.meanerror import MOE
-from Statistics.cochran import cochran
+from Statistics.cochran import Cochran
 from Statistics.samplesize import samplesize
 
 class Statistics:
@@ -59,33 +59,32 @@ class Statistics:
         return self.result
 
     def randlist(self, a, b, c):
-        self.result = Rand(a, b, c)
+        self.data = Rand(a, b, c)
+        return self.data
+
+    def randomchoose(self, data):
+        self.result = Randchoice(data)
         return self.result
 
-    def randomchoose(self):
-        self.result = Randchoice()
+    def randnlist(self, data, n):
+        self.data = randn(data, n)
+        return self.data
+
+    def randnsample(self, data, n):
+        self.data = randsample(data,n)
+        return self.data
+
+    def randinterval(self, data, confidence):
+        return mean_confidence_interval(data, confidence)
+
+    def marginerror(self, data, confidence):
+        self.result = MOE(data, confidence)
         return self.result
 
-    def randnlist(self, n):
-        self.result = randn(n)
+    def cochran(self, data, conf, p = 0.5):
+        self.result = Cochran(data, conf, p)
         return self.result
 
-    def randnsample(self, n):
-        self.result = randsample(n)
-        return self.result
-
-    def randinterval(self, data, confidence=0.95):
-        self.result = mean_confidence_interval(data, confidence=0.95)
-        return self.result
-
-    def marginerror(self, data, z):
-        self.result = MOE(data, z)
-        return self.result
-
-    def randcochran(self, N, cl, e, p):
-        self.result = cochran(N, cl, e, p)
-        return self.result
-
-    def samplesze(self, data, z):
-        self.result = samplesize(data, z)
+    def samplesze(self, conf, width, p = 0.5):
+        self.result = samplesize(conf, width, p)
         return self.result

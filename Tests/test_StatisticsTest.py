@@ -47,31 +47,58 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.statistics.check(self.test_data), type(self.test_data))
 
     def test_randomeseed(self):
-        self.assertEqual(self.statistics.randseed(self.test_data))
+        self.assertEqual(self.statistics.randseed(1,10), self.statistics.randseed(1,10))
 
     def test_randlist(self):
-        self.assertEqual(self.statistics.randlist(self.test_data))
+        # print(len(self.test_data))
+        data1 = self.statistics.randlist(1, 50, 10)
+        data2 = self.statistics.randlist(1, 50, 10)
+        for i in range(10):
+            self.assertEqual(data1[i],data2[i])
+        # print(len(self.test_data))
 
     def test_randchoose(self):
-        self.assertEqual((self.statistics.randomchoose()))
+        # print(len(self.test_data))
+        self.assertEqual(self.statistics.randomchoose(self.test_data), self.statistics.randomchoose(self.test_data))
 
     def test_randnlist(self):
-        self.assertEqual(self.statistics.randnlist(self.test_data))
+        data1 = self.statistics.randnlist(self.test_data, 10)
+        data2 = self.statistics.randnlist(self.test_data, 10)
+        for i in range(10):
+            self.assertEqual(data1[i], data2[i])
 
     def test_randnsample(self):
-        self.assertEqual(self.statistics.randnsample(self.test_data))
+        data1 = self.statistics.randnsample(self.test_data, 10)
+        data2 = self.statistics.randnsample(self.test_data, 10)
+        for i in range(10):
+            self.assertEqual(data1[i], data2[i])
+
 
     def test_randinterval(self):
-        self.assertEqual(self.statistics.randinterval(self.test_data))
+        self.test_data = []
+        data = CSVReader("Tests/Data/Test_Data.csv").data
+        for row in data:
+            self.test_data.append(float(row['value1']))
+
+        m1, left1, right1 = self.statistics.randinterval(self.test_data, 95)
+        self.assertEqual(m1, 99.3155)
+        self.assertEqual(left1, 100.183310845)
+        self.assertEqual(right1, 98.447689155)
 
     def test_moe(self):
-        self.assertEqual(self.statistics.marginerror(self.test_data))
+        self.test_data = []
+        data = CSVReader("Tests/Data/Test_Data.csv").data
+        for row in data:
+            self.test_data.append(float(row['value1']))
+
+        moe = self.statistics.marginerror(self.test_data, 95)
+        self.assertEqual(moe, 0.867810845)
 
     def test_cochran(self):
-        self.assertEqual(self.statistics.randcochran(self.test_data))
+        self.assertEqual(self.statistics.cochran(self.test_data, 95, 0.5), 385)
 
     def test_samplesze(self):
-        self.assertEqual(self.statistics.samplesze(self.test_data))
+        self.assertEqual(self.statistics.samplesze(95,0.06,0.41), 1033)
 
 
 

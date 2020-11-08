@@ -1,15 +1,8 @@
-import scipy.stats as st
-from math import ceil
+from Statistics.meanerror import MOE
+from Statistics.Z_value import z_value
+from Calculator.Multiplication import multiplication
+from Calculator.Division import division
+from Calculator.Squaring import squaring
 
-
-def cochran(N, cl, e, p):
-    # first we get the z-score
-    z = st.norm.ppf(1 - (1 - cl) / 2)
-    # then the n_0 value
-    n_0 = z ** 2 * p * (1 - p) / e ** 2
-    # and finally we calculate n
-    n = n_0 / (1 + (n_0 - 1) / N)
-    # we also need to round up to the nearest integer
-    n = ceil(n)
-    # finally we return our sample size
-    return n
+def Cochran(data, conf, p = 0.5):
+    return division(multiplication(squaring(z_value(conf)),multiplication(p,1-p)), squaring(1 - conf/100), 0) + 1

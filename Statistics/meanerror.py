@@ -1,8 +1,8 @@
-import numpy as np
-import scipy.stats
+from Statistics.Z_value import z_value
 from Statistics.StandardDeviation import standarddeviation_data
-from Statistics.Zscore import z_score_transformation
+from Calculator.SquareRoot import squareRoot
+from Calculator.Division import division
+from Calculator.Multiplication import multiplication
 
-
-def MOE(data, z):
-    return z_score_transformation(z) * standarddeviation_data(data) / np.sqrt(len(data))
+def MOE(data, confidence):
+    return division(multiplication(z_value(confidence),standarddeviation_data(data)),squareRoot(len(data),9),9)
